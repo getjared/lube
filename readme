@@ -10,8 +10,9 @@ features:
 • high quality gif output
 
 example outputs:
-• static >> https://imgur.com/a/gAvL7Iw
-• motion >> https://jmp.sh/zFbu69J9
+• static             >> https://imgur.com/a/gAvL7Iw
+• motion             >> https://jmp.sh/zFbu69J9
+• video of it in use >> https://jmp.sh/IYc13kqN
 
 see ./makefile for easy installation
 
