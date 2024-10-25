@@ -10,12 +10,13 @@ features:
 • high quality gif output
 
 example outputs:
-• static >> https://i.imgur.com/example-input.jpg
-• motion >> https://i.imgur.com/example-output.gif
+• static >> https://imgur.com/a/gAvL7Iw
+• motion >> https://jmp.sh/zFbu69J9
 
 see ./makefile for easy installation
 
-§ installationgit clone https://github.com/getjared/lube.git
+§ installation
+git clone https://github.com/getjared/lube.git
 cd lube
 make
 sudo make install
