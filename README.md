@@ -1,0 +1,135 @@
+
+                               lube.c
+                <motion amplification for still images>
+
+features:
+• interactive region selection
+• customizable motion parameters
+• advanced color quantization
+• smooth motion interpolation
+• high quality gif output
+
+example outputs:
+• static >> https://i.imgur.com/example-input.jpg
+• motion >> https://i.imgur.com/example-output.gif
+
+see ./makefile for easy installation
+
+§ installationgit clone https://github.com/getjared/lube.git
+cd lube
+make
+sudo make install
+
+§ dependencies
+• c compiler (gcc or clang)
+• make
+• libjpeg (jpeg handling)
+• giflib (gif creation)
+• sdl2 (region selection)
+
+§ quick-start
+basic usage:
+```bash
+./lube input.jpg output.gif                    : create animation with defaults
+./lube -f 30 input.jpg output.gif              : use 30 frames
+./lube -t 5 input.jpg output.gif               : slower animation
+./lube -m 0 input.jpg output.gif               : horizontal only
+```
+
+motion types:
+• `-m 0`  : horizontal motion only
+• `-m 1`  : vertical motion only
+• `-m 2`  : both directions (default)
+
+controls:
+• `-f <frames>`  : frame count (1-30, default: 24)
+• `-t <delay>`   : frame delay in 1/100s (default: 3)
+• `-h`           : show help
+
+interactive usage:
+1. run with your options
+2. in the window:
+   - click and drag for motion areas
+   - bigger circles = more motion area
+   - up to 10 regions allowed
+   - close window or press esc when done
+3. wait for gif creation
+
+example commands:
+```bash
+# gentle wave effect on water
+./lube -m 0 -f 30 -t 8 lake.jpg wave.gif
+
+# subtle tree movement
+./lube -m 2 -f 24 -t 5 forest.jpg breeze.gif
+
+# slow flowing clouds
+./lube -m 0 -f 30 -t 10 sky.jpg clouds.gif
+
+# ripple effect
+./lube -m 2 -f 20 -t 3 pond.jpg ripple.gif
+
+# flag waving
+./lube -m 0 -f 24 -t 4 flag.jpg wave.gif
+
+# grass moving in wind
+./lube -m 2 -f 30 -t 6 field.jpg wind.gif
+
+# create a dreamy effect
+./lube -m 2 -f 30 -t 8 portrait.jpg dream.gif
+
+# make leaves rustle
+./lube -m 2 -f 24 -t 4 tree.jpg rustle.gif
+
+# create subtle facial animation
+./lube -m 2 -f 20 -t 6 face.jpg animate.gif
+
+# water reflection movement
+./lube -m 0 -f 30 -t 5 reflection.jpg shimmer.gif
+```
+
+pro tips:
+• use slower delays (-t 8-10) for subtle effects
+• combine multiple regions for complex motion
+• smaller regions = more precise control
+• try different motion modes for varied effects
+• experiment with frame counts for smoothness
+
+more examples:
+```bash
+# super slow and subtle
+./lube -m 2 -f 30 -t 15 input.jpg subtle.gif
+
+# quick and bouncy
+./lube -m 2 -f 15 -t 2 input.jpg quick.gif
+
+# smooth horizontal drift
+./lube -m 0 -f 30 -t 7 input.jpg drift.gif
+
+# gentle vertical float
+./lube -m 1 -f 24 -t 6 input.jpg float.gif
+
+# combine both for complex motion
+./lube -m 2 -f 30 -t 5 input.jpg complex.gif
+```
+
+§ technical bits
+• uses median cut for colors (up to 256)
+• smooth motion interpolation
+• gaussian motion falloff
+• frame-by-frame processing
+• automatic palette generation
+
+§ credits
+• libjpeg: http://libjpeg.sourceforge.net/
+• giflib: http://giflib.sourceforge.net/
+• sdl2: https://www.libsdl.org/
+
+§ notes
+• jpeg input only
+• gif output only
+• bigger images = slower processing
+• max 10 motion regions
+• max 30 frames per animation
+• close window to finish selection
+• this is a just for fun thing. .
