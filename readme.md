@@ -34,10 +34,12 @@
 
 ## ✧ examples
 
+| still  | motion |
+|--------|-------|
+| ![before](https://imgur.com/a/gAvL7Iw) | ![after](https://jmp.sh/zFbu69J9) |
+
 | type | link |
 |------|------|
-| static image | [view](https://imgur.com/a/gAvL7Iw) |
-| motion result | [view](https://jmp.sh/zFbu69J9) |
 | usage demo | [view](https://jmp.sh/IYc13kqN) |
 
 ## ✧ installation
